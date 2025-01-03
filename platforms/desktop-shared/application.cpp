@@ -385,12 +385,6 @@ static void sdl_events_emu(const SDL_Event* event)
 
             int key = event->key.keysym.scancode;
 
-            if (key == SDL_SCANCODE_ESCAPE)
-            {
-                application_trigger_quit();
-                break;
-            }
-
             if (key == SDL_SCANCODE_F11)
             {
                 config_emulator.fullscreen = !config_emulator.fullscreen;
@@ -497,6 +491,9 @@ static void sdl_shortcuts_gui(const SDL_Event* event)
                 break;
             case SDL_SCANCODE_BACKSPACE:
                 gui_shortcut(gui_ShortcutDebugGoBack);
+                break;
+            case SDL_SCANCODE_Q:
+                application_trigger_quit();
                 break;
         }
     }
