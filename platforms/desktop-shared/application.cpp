@@ -32,7 +32,6 @@
 static SDL_Window* sdl_window;
 static SDL_GLContext gl_context;
 static bool running = true;
-static bool paused_when_focus_lost = false;
 static Uint64 frame_time_start;
 static Uint64 frame_time_end;
 
