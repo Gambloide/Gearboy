@@ -330,6 +330,7 @@ static float read_float(const char* group, const char* key, float default_value)
 static void write_float(const char* group, const char* key, float value)
 {
     std::string value_str = std::to_string(value);
+    value_str.replace(value_str.find(","), 1, ".");
     config_ini_data[group][key] = value_str;
     Debug("Save setting: [%s][%s]=%s", group, key, value_str.c_str());
 }
