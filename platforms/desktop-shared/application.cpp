@@ -260,26 +260,6 @@ static void sdl_events_emu(const SDL_Event* event)
             SDL_SetWindowInputFocus(sdl_window);
             break;
         }
-        case SDL_WINDOWEVENT:
-        {
-            switch (event->window.event)
-            {
-                case SDL_WINDOWEVENT_FOCUS_GAINED:
-                {
-                    if (!paused_when_focus_lost)
-                        emu_resume();
-                }
-                break;
-
-                case SDL_WINDOWEVENT_FOCUS_LOST:
-                {
-                    paused_when_focus_lost = emu_is_paused();
-                    emu_pause();
-                }
-                break;
-            }
-        }
-        break;
 
         case SDL_CONTROLLERBUTTONDOWN:
         {
